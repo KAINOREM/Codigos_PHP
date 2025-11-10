@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <?php
+
+function bubbleSortMultidimensional(array $array, string $sortKey): array
+{
+    $n = count($array);
+    $swapped = true;
+
+    while ($swapped) {
+        $swapped = false;
+        for ($i = 0; $i < $n - 1; $i++) {
+            // Compare elements based on the specified key
+            if ($array[$i][$sortKey] > $array[$i + 1][$sortKey]) {
+                // Swap the entire inner arrays
+                list($array[$i], $array[$i + 1]) = array($array[$i + 1], $array[$i]);
+                $swapped = true;
+            }
+        }
+        // Optimization: the largest element "bubbles up" to the end in each pass
+        $n--; 
+    }
+    return $array;
+}
+
+// Example usage:
+$data = [
+    ['name' => 'John', 'age' => 30],
+    ['name' => 'Jane', 'age' => 25],
+    ['name' => 'Peter', 'age' => 35],
+    ['name' => 'Alice', 'age' => 28],
+];
+
+echo "Original Array:\n";
+print_r($data);
+
+$sortedData = bubbleSortMultidimensional($data, 'age');
+
+echo "\nSorted Array by 'age':\n";
+print_r($sortedData);
+
+?>
+</body>
+</html>

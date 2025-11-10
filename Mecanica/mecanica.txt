@@ -1,0 +1,8 @@
+SGBD Utilizado: MariaDB
+Versão:10.4.32-MariaDB
+
+Sistema Operacional: Windows 11 Enterprise
+Versão:24H2
+
+Linguagem de Programação: Php
+Versão:8.2.12
