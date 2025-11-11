@@ -39,6 +39,9 @@
             <a href="site_gestao_estoque.php">Gestão de Estoque</a>
         </div>
         <div>
+            <a href="historico_transacoes.php">Histórico</a>
+        </div>
+        <div>
             <a href="index.php">Retornar</a>
         </div>
     </body>

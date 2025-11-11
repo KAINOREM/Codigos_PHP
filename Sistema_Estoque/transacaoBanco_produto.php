@@ -15,6 +15,7 @@
 			} else {
 				$IdProduto = (int)$conexao -> real_escape_string($_POST['IdProduto']);
 				$Quantidade = (int)$conexao -> real_escape_string($_POST['Quantidade']);
+				$Data = (int)$conexao -> real_escape_string($_POST['Data']);
 
 				$sql = "SELECT Quantidade,Quantidade_Minima FROM `escola_db`.`estoque` WHERE IdProduto = '".$IdProduto."';";
 				$resultado = $conexao->query($sql);
@@ -46,7 +47,7 @@
 				}
 
 				$sql = "INSERT INTO `escola_db`.`transacao` (`IdProduto`, `IdFuncionario`, `Data_Transacao`, `tipo`, `Quantidade`) 
-						VALUES ('".$IdProduto."', '" . (int)$_SESSION['Id'] . "' , NOW(),'".$tipo."', '".$quantidade_absoluta."');"; /*1 = Entrada 2 = Saida*/
+						VALUES ('".$IdProduto."', '" . (int)$_SESSION['Id'] . "' , '".$Data."','".$tipo."', '".$quantidade_absoluta."');"; /*1 = Entrada 2 = Saida*/
 				
 				$resultado = $conexao->query($sql);
 

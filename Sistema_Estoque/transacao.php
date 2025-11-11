@@ -30,6 +30,10 @@
                                         <label for="cliente">Quantidade movimentada:</label>
                                         <input type="number" name="Quantidade" id="Quantidade" required>
                                     </div>
+                                    <div>
+                                        <label for="cliente">Data da Movimentação:</label>
+                                        <input type="date" name="Data" id="Data" required>
+                                    </div>
                                     <input type="hidden" name="IdProduto" id="IdProduto" value="' . $IdProduto .'">
                                 <button type="submit">Editar</button>
                             </form>';
